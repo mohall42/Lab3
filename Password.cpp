@@ -12,6 +12,7 @@ Password::Password
 	ListArray<String>* all_words = new ListArray<String>();
 	
 	int len = all_word[1]->Length();
+	//i had put len = 0, but i dont know if this is correct
 	int getNumMatches() = NULL;
 	
 	
@@ -35,12 +36,22 @@ Password::~Password
 
 int getNumMatches(String* curr_word, String* word_guess)
 {
-	
+	curr_word = curr_word[];
+	word_guess = word_guess[];
+	int num_matches = 0;
+	while (int i = 0, curr_word[i] < len, i++)
+	{		
+		if(curr_word[i] = word_guess[i])
+		{
+		num_matches ++;
+		}
+	}
 }
 void Password::addWord(String* word)
 {
 	 all_words->add(word);
 }
+
 void guess (int try_password, int num_matches)
 {
 	String* password = getOrginalWord (try_password);
@@ -48,21 +59,23 @@ void guess (int try_password, int num_matches)
 	
 	
 }
+
 void displayViableWords()
 {
-	
+	ListArrayIterator<String>* viable_iter = viable_words->iterator();
+	{
+		while(viable_iter->hasNex())
+		{
+			cout<<viable_words;
+		}
+	}
+	delete viable_iter;
 }
+
 String* getOrginalWord(int index)
 {
 	 all_words->get(int index)
 }
-
-
-
-
-
-
-
 
 int Password::bestGuess()
 {
