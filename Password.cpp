@@ -12,25 +12,27 @@ Password::Password
 	ListArray<String>* all_words = new ListArray<String>();
 	
 	int len = all_word[1]->Length();
-	//i had put len = 0, but i dont know if this is correct
 	int getNumMatches() = NULL;
+	//int len = 0;
 	
 	
 }
 
 Password::~Password
 {
-	ListArrayIterator<String>* viableWordIter = viable_words->iterator();
-	while (viableWordIter->hasNext())
+	ListArrayIterator<String>* viable_iter = viable_words->iterator();
+	while (viable_iter->hasNext())
 	{
-		String* viable_word = viableWordIter->next());
+		String* viable_word = viable_iter->next());
 		delete viable_word;
+		delete viable_iter;
 	}
-	ListArrayIterator<String>* allWordIter = all_words->iterator();
-	while (allWordIter->hasNext())
+	ListArrayIterator<String>* all_iter = all_words->iterator();
+	while (all_iter->hasNext())
 	{
-		String* all_words = allWordIter->next());
+		String* all_words = all_iter->next());
 		delete all_words;
+		delete all_iter;
 	}
 }
 
@@ -66,6 +68,7 @@ void displayViableWords()
 	{
 		while(viable_iter->hasNex())
 		{
+			String* viable_words = viable_iter->next());
 			cout<<viable_words;
 		}
 	}
