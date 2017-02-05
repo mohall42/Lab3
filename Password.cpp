@@ -1,12 +1,61 @@
 #include "Password.h"
 using CSC2110::ListArrayIterator;
-
+using CSC2110::String;
+using CSC2110::ListArray;
 #include <iostream>
 using namespace std;
 
+Password::Password 
+{
+	ListArray<String>* viable_words = new ListArray<String>();
+	
+	ListArray<String>* all_words = new ListArray<String>();
+	
+	int len = all_word[1]->Length();
+	int getNumMatches() = NULL;
+	
+	
+}
 
+Password::~Password
+{
+	ListArrayIterator<String>* viableWordIter = viable_words->iterator();
+	while (viableWordIter->hasNext())
+	{
+		String* viable_word = viableWordIter->next());
+		delete viable_word;
+	}
+	ListArrayIterator<String>* allWordIter = all_words->iterator();
+	while (allWordIter->hasNext())
+	{
+		String* all_words = allWordIter->next());
+		delete all_words;
+	}
+}
 
-
+int getNumMatches(String* curr_word, String* word_guess)
+{
+	
+}
+void Password::addWord(String* word)
+{
+	 all_words->add(word);
+}
+void guess (int try_password, int num_matches)
+{
+	String* password = getOrginalWord (try_password);
+	ListArrayIterator<String>* iter = all_words->iterator();
+	
+	
+}
+void displayViableWords()
+{
+	
+}
+String* getOrginalWord(int index)
+{
+	 all_words->get(int index)
+}
 
 
 
