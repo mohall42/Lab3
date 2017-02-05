@@ -11,11 +11,9 @@ Password::Password
 	
 	ListArray<String>* all_words = new ListArray<String>();
 	
+	int len = 0;
 	int len = all_word[1]->Length();
 	int getNumMatches() = NULL;
-	//int len = 0;
-	
-	
 }
 
 Password::~Password
@@ -51,7 +49,13 @@ int getNumMatches(String* curr_word, String* word_guess)
 }
 void Password::addWord(String* word)
 {
+	if (len = 0)
+	{
+		int len = word[1]->Length();
+	}
+	
 	 all_words->add(word);
+	 viable_words->add(word);
 }
 
 void guess (int try_password, int num_matches)
