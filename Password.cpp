@@ -60,9 +60,21 @@ void Password::addWord(String* word)
 
 void guess (int try_password, int num_matches)
 {
+	int orignialIndex:
 	String* password = getOrginalWord (try_password);
 	ListArrayIterator<String>* iter = all_words->iterator();
-	
+	int stringSize = password->length());
+	while ( iter->hasNext())
+	{
+		if ( getNumMatches(password, iter->next() == stringSize; )
+			originalIndex = iter->next();
+	}
+	ListArrayIterator<String>* allIter = all_words->iterator();
+	while (allIter->hasNext())
+	{
+		if (getNumMatches(password, iter->next) < num_matches)
+			viable_words->remove(iter->next);
+	}
 	
 }
 
