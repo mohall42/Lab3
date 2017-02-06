@@ -34,7 +34,7 @@ Password::~Password
 	}
 }
 
-int getNumMatches(String* curr_word, String* word_guess)
+int Password::getNumMatches(String* curr_word, String* word_guess)
 {
 	curr_word = curr_word[];
 	word_guess = word_guess[];
@@ -58,7 +58,7 @@ void Password::addWord(String* word)
 	 viable_words->add(word);
 }
 
-void guess (int try_password, int num_matches)
+void Password::guess (int try_password, int num_matches)
 {
 	int orignialIndex:
 	String* password = getOrginalWord (try_password);
@@ -78,7 +78,7 @@ void guess (int try_password, int num_matches)
 	
 }
 
-void displayViableWords()
+void Password::displayViableWords()
 {
 	ListArrayIterator<String>* viable_iter = viable_words->iterator();
 	{
@@ -91,7 +91,7 @@ void displayViableWords()
 	delete viable_iter;
 }
 
-String* getOrginalWord(int index)
+String* Password::getOrginalWord(int index)
 {
 	 all_words->get(int index)
 }
