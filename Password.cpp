@@ -69,26 +69,33 @@ void Password::addWord(String* word)
 
 void Password::guess (int try_password, int num_matches)
 {
-	int orignialIndex;
+	int matches = 0;
+	int i = 1;
 	String* password = getOriginalWord(try_password);
-	ListArrayIterator<String>* iter = all_words->iterator();
-	int stringSize = password->length();
+	ListArrayIterator<String>* iter = viable_words->iterator();
+	//int stringSize = password->length();
 	while ( iter->hasNext())
-	{
-		//if ( getNumMatches(password, iter->next() == stringSize; )
-			//orignialIndex = iter->next();
-	}
-	ListArrayIterator<String>* allIter = all_words->iterator();
+	{	
+		
+		 matches = getNumMatches(password, viable_words[i]);
+		 if (matches < num_matches)
+			 viable_word->remove(i);
+		 
+		i++;	//origninalIndex = iter->next();
+	}	
+	/*ListArrayIterator<String>* allIter = all_words->iterator();
 	while (allIter->hasNext())
 	{
 		//if (getNumMatches(password, iter->next) < num_matches)
 	//		viable_words->remove(iter->next);
-	}
-	
+	}*/
 }
 
 int Password::getNumberOfPasswordsLeft() //returns the number of possible passwords remaining
 {
+	int size;
+	size = viable_words->size();
+	return size;
 	//return size of viable_words
 }	
 
