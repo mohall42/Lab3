@@ -78,6 +78,14 @@ void Password::guess (int try_password, int num_matches)
 	
 }
 
+<<<<<<< HEAD
+=======
+int Password::getNumberOfPasswordsLeft() //returns the number of possible passwords remaining
+{
+	//return size of viable_words
+}	
+
+>>>>>>> d067ee5ad8992716ffb345f570aa50d3492b7d6f
 void Password::displayViableWords()
 {
 	ListArrayIterator<String>* viable_iter = viable_words->iterator();
