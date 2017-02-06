@@ -1,34 +1,39 @@
 #include "Password.h"
+#include "String.h"
+#include "ListArray.h"
+#include "ListArrayIterator.h"
+
+#include <iostream>
+using namespace std;
+using namespace CSC2110;
+
 using CSC2110::ListArrayIterator;
 using CSC2110::String;
 using CSC2110::ListArray;
-#include <iostream>
-using namespace std;
 
-Password::Password 
+
+Password::Password()
 {
 	ListArray<String>* viable_words = new ListArray<String>();
 	
 	ListArray<String>* all_words = new ListArray<String>();
 	
-	int len = 0;
-	int len = all_word[1]->Length();
-	int getNumMatches() = NULL;
+    len = 0;
 }
 
-Password::~Password
+Password::~Password()
 {
 	ListArrayIterator<String>* viable_iter = viable_words->iterator();
 	while (viable_iter->hasNext())
 	{
-		String* viable_word = viable_iter->next());
+		String* viable_word = viable_iter->next();
 		delete viable_word;
 		delete viable_iter;
 	}
 	ListArrayIterator<String>* all_iter = all_words->iterator();
 	while (all_iter->hasNext())
 	{
-		String* all_words = all_iter->next());
+		String* all_words = all_iter->next();
 		delete all_words;
 		delete all_iter;
 	}
@@ -36,72 +41,73 @@ Password::~Password
 
 int Password::getNumMatches(String* curr_word, String* word_guess)
 {
-	curr_word = curr_word[];
-	word_guess = word_guess[];
 	int num_matches = 0;
-	while (int i = 0, curr_word[i] < len, i++)
+	for (int i = 0; i < len; i++)
 	{		
-		if(curr_word[i] = word_guess[i])
+		char curr = curr_word->charAt(i);
+		char guess = word_guess->charAt(i);
+		if(curr == guess)
 		{
 		num_matches ++;
 		}
 	}
+	return num_matches;
 }
 void Password::addWord(String* word)
 {
-	if (len = 0)
+	if (len == 0)
 	{
-		int len = word[1]->Length();
+		len = word->length();
 	}
 	
-	 all_words->add(word);
-	 viable_words->add(word);
+	if(len == word->length())
+	{
+		all_words->add(word);
+		viable_words->add(word);
+	}
 }
 
 void Password::guess (int try_password, int num_matches)
 {
-	int orignialIndex:
-	String* password = getOrginalWord (try_password);
+	int orignialIndex;
+	String* password = getOriginalWord(try_password);
 	ListArrayIterator<String>* iter = all_words->iterator();
-	int stringSize = password->length());
+	int stringSize = password->length();
 	while ( iter->hasNext())
 	{
-		if ( getNumMatches(password, iter->next() == stringSize; )
-			originalIndex = iter->next();
+		//if ( getNumMatches(password, iter->next() == stringSize; )
+			//orignialIndex = iter->next();
 	}
 	ListArrayIterator<String>* allIter = all_words->iterator();
 	while (allIter->hasNext())
 	{
-		if (getNumMatches(password, iter->next) < num_matches)
-			viable_words->remove(iter->next);
+		//if (getNumMatches(password, iter->next) < num_matches)
+	//		viable_words->remove(iter->next);
 	}
 	
 }
 
-<<<<<<< HEAD
-=======
 int Password::getNumberOfPasswordsLeft() //returns the number of possible passwords remaining
 {
 	//return size of viable_words
 }	
 
->>>>>>> d067ee5ad8992716ffb345f570aa50d3492b7d6f
 void Password::displayViableWords()
 {
 	ListArrayIterator<String>* viable_iter = viable_words->iterator();
 	{
-		while(viable_iter->hasNex())
+		while(viable_iter->hasNext())
 		{
-			String* viable_words = viable_iter->next());
+			String* viable_words = viable_iter->next();
 			cout<<viable_words;
 		}
 	}
 	delete viable_iter;
 }
 
-String* Password::getOrginalWord(int index)
+String* Password::getOriginalWord(int index)
 {
-	 all_words->get(int index)
+	 all_words->get(index);
 }
 
 int Password::bestGuess()
